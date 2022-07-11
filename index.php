@@ -50,21 +50,21 @@
         ],
     ];
 
-    $title = [];
-    $paragraph = [];
+    // $title = [];
+    // $paragraph = [];
 
-    foreach ($db as $index => $element) {
-        $title[] = $element['title'];
-    }
+    // foreach ($db as $index => $element) {
+    //     $title[] = $element['title'];
+    // }
 
-    foreach ($db as $element) {
-        $paragraph[] = $element['paragraph'];
-    }
+    // foreach ($db as $element) {
+    //     $paragraph[] = $element['paragraph'];
+    // }
 
 
 
-    var_dump($title);
-    var_dump($paragraph);
+    // var_dump($title);
+    // var_dump($paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -76,16 +76,18 @@
     <title>Google FAQ</title>
 </head>
 <body>
-    <?php foreach ($title as $printTitle) { ?>
-        <h1> <?php echo $printTitle ?> </h1>
-    <?php } ?>
-    <?php foreach ($paragraph as $index => $element) { 
-        foreach ($element as $singolarElement) { ?>
-        <p> <?php echo $singolarElement ?> </p>
+    <?php foreach ($db as $item) { ?>
+        <h1> <?php echo $item['title'] ?> </h1>
 
+        <?php foreach ($item as $element) { 
+            foreach ($element as $par['paragraph']) { ?>
+            <p> <?php echo $par['paragraph'] ?> </p>
+
+            <?php } ?>
         <?php } ?>
-        
     <?php } ?>
+
 
 </body>
 </html>
+
