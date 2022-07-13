@@ -79,11 +79,9 @@
     <?php foreach ($db as $item) { ?>
         <h1> <?php echo $item['title'] ?> </h1>
 
-        <?php foreach ($item as $element) { 
-            foreach ($element as $par['paragraph']) { ?>
-            <p> <?php echo $par['paragraph'] ?> </p>
+        <?php foreach ($item['paragraph'] as $element) { ?>
+            <p> <?php echo $element ?> </p>
 
-            <?php } ?>
         <?php } ?>
     <?php } ?>
 
